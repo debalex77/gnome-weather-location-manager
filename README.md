@@ -16,14 +16,34 @@ Lightweight, fast, and without external network dependencies.
 ## Usage
 add-gnome-weather-location "Location Name" LATITUDE LONGITUDE
 
-## Example:
-add-gnome-weather-location "Chișinău" 47.0105 28.8638
-
 ## Requirements
  * GNOME Weather 48 or newer
  * libgweather 4.x
  * GLib/GIO
  * GSettings
+Compilation
+Requirements
+
+## Install the required development packages:
+```
+sudo apt install build-essential pkg-config libgweather-4-dev
+```
+
+## Build
+Compile the program using GCC and the pkg-config information provided by libgweather:
+```
+gcc -Wall -Wextra -O2 \
+    add-gnome-weather-location.c \
+    -o add-gnome-weather-location \
+    $(pkg-config --cflags --libs gweather4 gio-2.0)
+```
+
+## Run
+```
+./add-gnome-weather-location "Chișinău" 47.0105 28.8638
+```
+
+The program creates a serialized GWeatherLocation object using the installed libgweather library and stores it in the org.gnome.Weather GSettings database.
 
 ## License
 This utility uses only the public libgweather API and does not modify or patch GNOME Weather or libgweather.
