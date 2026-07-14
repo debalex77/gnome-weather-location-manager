@@ -8,6 +8,7 @@
 ![GNOME Weather](https://img.shields.io/badge/GNOME%20Weather-Location%20Manager-4A86CF)
 
 # GNOME Weather Location Manager
+A small command-line utility for adding custom locations to GNOME Weather using the official libgweather API.
 ## Description
 GNOME Weather Location Manager is a small command-line utility for GNOME Weather (libgweather 4.x) that allows users to add custom locations directly to the application's settings.
 
