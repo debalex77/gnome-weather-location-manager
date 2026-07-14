@@ -13,9 +13,9 @@ int main(int argc, char *argv[])
 
     if (argc != 4) {
         g_printerr(
-            "Utilizare:\n"
-            "  %s \"Numele localității\" LATITUDINE LONGITUDINE\n\n"
-            "Exemplu:\n"
+            "Usage:\n"
+            "  %s \"Location name\" LATITUDE LONGITUDE\n\n"
+            "Example:\n"
             "  %s \"Chișinău\" 47.0105 28.8638\n",
             argv[0], argv[0]
         );
@@ -32,21 +32,21 @@ int main(int argc, char *argv[])
 
     if (end_lat == argv[2] || *end_lat != '\0' ||
         end_lon == argv[3] || *end_lon != '\0') {
-        g_printerr("Coordonatele nu sunt numere valide.\n");
+        g_printerr("The coordinates are not valid numbers.\n");
         return EXIT_FAILURE;
     }
 
     if (latitude_deg < -90.0 || latitude_deg > 90.0) {
-        g_printerr("Latitudinea trebuie să fie între -90 și 90.\n");
+        g_printerr("Latitude must be between -90 and 90 degrees.\n");
         return EXIT_FAILURE;
     }
 
     if (longitude_deg < -180.0 || longitude_deg > 180.0) {
-        g_printerr("Longitudinea trebuie să fie între -180 și 180.\n");
+        g_printerr("Longitude must be between -180 and 180 degrees.\n");
         return EXIT_FAILURE;
     }
 
-    /* libgweather folosește radiani */
+    /* libgweather uses radians */
     const double latitude_rad =
         latitude_deg * G_PI / 180.0;
 
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
         );
 
     if (location == NULL) {
-        g_printerr("Nu s-a putut crea locația.\n");
+        g_printerr("Failed to create the location.\n");
         return EXIT_FAILURE;
     }
 
@@ -70,14 +70,14 @@ int main(int argc, char *argv[])
         gweather_location_serialize(location);
 
     if (serialized == NULL) {
-        g_printerr("Nu s-a putut serializa locația.\n");
+        g_printerr("Failed to serialize the location.\n");
         g_object_unref(location);
         return EXIT_FAILURE;
     }
 
     /*
-     * locations are tipul „av”.
-     * Fiecare element este serializarea locației împachetată în variantă.
+     * The "locations" key has the GVariant type "av".
+     * Each element contains a serialized location wrapped in a variant.
      */
     GVariantBuilder builder;
     g_variant_builder_init(
@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
             locations,
             G_VARIANT_TYPE("av"))) {
         g_printerr(
-            "Eroare internă: rezultatul nu are tipul av.\n"
+            "Internal error: the resulting GVariant does not have type 'av'.\n"
         );
 
         g_variant_unref(locations);
@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
 
     if (!success) {
         g_printerr(
-            "Scrierea cheii GSettings a eșuat.\n"
+            "Failed to write the GSettings key.\n"
         );
 
         g_object_unref(settings);
@@ -135,9 +135,9 @@ int main(int argc, char *argv[])
         g_variant_print(locations, TRUE);
 
     g_print(
-        "Locația a fost adăugată:\n"
-        "  %s — %.6f, %.6f grade\n"
-        "  %.12f, %.12f radiani\n\n"
+        "Location added successfully:\n"
+        "  %s — %.6f, %.6f degrees\n"
+        "  %.12f, %.12f radians\n\n"
         "GSettings:\n%s\n",
         name,
         latitude_deg,
