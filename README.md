@@ -21,8 +21,6 @@ add-gnome-weather-location "Location Name" LATITUDE LONGITUDE
  * libgweather 4.x
  * GLib/GIO
  * GSettings
-Compilation
-Requirements
 
 ## Install the required development packages:
 ```
@@ -41,6 +39,11 @@ gcc -Wall -Wextra -O2 \
 ## Run
 ```
 ./add-gnome-weather-location "Chișinău" 47.0105 28.8638
+```
+
+## Verification
+```
+gsettings get org.gnome.Weather locations 
 ```
 
 The program creates a serialized GWeatherLocation object using the installed libgweather library and stores it in the org.gnome.Weather GSettings database.
