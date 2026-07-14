@@ -1,5 +1,3 @@
-# GNOME Weather Location Manager
-
 ![Linux](https://img.shields.io/badge/Linux-Debian%2013-red)
 ![GNOME](https://img.shields.io/badge/GNOME-48-4A86CF)
 ![libgweather](https://img.shields.io/badge/libgweather-4.x-green)
