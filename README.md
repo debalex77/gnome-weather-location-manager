@@ -17,13 +17,17 @@ Lightweight, fast, and without external network dependencies.
 add-gnome-weather-location "Location Name" LATITUDE LONGITUDE
 
 ## Requirements
- * GNOME Weather 48 or newer
- * libgweather 4.x
- * GLib/GIO
- * GSettings
 
-## Install the required development packages:
-```
+- GNOME Weather 48 or newer
+- libgweather 4.x
+- GLib/GIO
+- GSettings
+
+## Compilation
+
+### Install the required development packages
+
+```bash
 sudo apt install build-essential pkg-config libgweather-4-dev
 ```
 
