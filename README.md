@@ -13,6 +13,16 @@ Writes the location directly into the GNOME Weather GSettings database.
 Avoids manual editing of GSettings or undocumented GVariant structures.
 Lightweight, fast, and without external network dependencies.
 
+## Motivation
+This project was created after encountering situations where certain locations could not be added through the GNOME Weather user interface. Instead of relying on undocumented GVariant structures, the utility uses the official `libgweather` serialization API to generate compatible location objects.
+
+## Advantages
+- Uses only the public `libgweather` API.
+- Compatible with the installed `libgweather` version.
+- No manual GVariant editing.
+- No patches to GNOME Weather.
+- Lightweight command-line utility.
+
 ## Usage
 add-gnome-weather-location "Location Name" LATITUDE LONGITUDE
 
