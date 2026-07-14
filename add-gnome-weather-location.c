@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
     GVariantBuilder builder;
     g_variant_builder_init(
         &builder,
-        G_VARIANT_TYPE_ARRAY
+        G_VARIANT_TYPE("av")
     );
 
     g_variant_builder_add(
