@@ -12,7 +12,7 @@ GNOME Weather Location Manager is a small command-line utility for GNOME Weather
 
 The utility creates a detached GWeatherLocation object, serializes it using the official libgweather API, and stores the serialized object in the org.gnome.Weather GSettings database. Because it relies on the library's own serialization functions, it remains compatible with the internal data format used by the installed version of libgweather, avoiding manual construction of GVariant values.
 
-## Features
+## ✨ Features
 Add any custom location using latitude and longitude.
 Uses the official libgweather API.
 Automatically converts geographic coordinates from degrees to radians.
@@ -24,7 +24,7 @@ Lightweight, fast, and without external network dependencies.
 ## Motivation
 This project was created after encountering situations where certain locations could not be added through the GNOME Weather user interface. Instead of relying on undocumented GVariant structures, the utility uses the official `libgweather` serialization API to generate compatible location objects.
 
-## Advantages
+## 📖 Advantages
 - Uses only the public `libgweather` API.
 - Compatible with the installed `libgweather` version.
 - No manual GVariant editing.
@@ -34,14 +34,14 @@ This project was created after encountering situations where certain locations c
 ## Usage
 add-gnome-weather-location "Location Name" LATITUDE LONGITUDE
 
-## Requirements
+## 🔧 Requirements
 
 - GNOME Weather 48 or newer
 - libgweather 4.x
 - GLib/GIO
 - GSettings
 
-## Compilation
+## 🔨 Compilation
 
 ### Install the required development packages
 
@@ -49,7 +49,7 @@ add-gnome-weather-location "Location Name" LATITUDE LONGITUDE
 sudo apt install build-essential pkg-config libgweather-4-dev
 ```
 
-## Build
+## 📦 Build
 Compile the program using GCC and the pkg-config information provided by libgweather:
 ```
 gcc -Wall -Wextra -O2 \
@@ -58,7 +58,7 @@ gcc -Wall -Wextra -O2 \
     $(pkg-config --cflags --libs gweather4 gio-2.0)
 ```
 
-## Run
+## 🚀 Run
 ```
 ./add-gnome-weather-location "Chișinău" 47.0105 28.8638
 ```
@@ -70,5 +70,5 @@ gsettings get org.gnome.Weather locations
 
 The program creates a serialized GWeatherLocation object using the installed libgweather library and stores it in the org.gnome.Weather GSettings database.
 
-## License
+## ⚖️ License
 This utility uses only the public libgweather API and does not modify or patch GNOME Weather or libgweather.
