@@ -1,4 +1,13 @@
 # GNOME Weather Location Manager
+
+![Linux](https://img.shields.io/badge/Linux-Debian%2013-red)
+![GNOME](https://img.shields.io/badge/GNOME-48-4A86CF)
+![libgweather](https://img.shields.io/badge/libgweather-4.x-green)
+![Language](https://img.shields.io/badge/C-17-blue)
+![License](https://img.shields.io/github/license/debalex77/gnome-weather-location-manager)
+![GNOME Weather](https://img.shields.io/badge/GNOME%20Weather-Location%20Manager-4A86CF)
+
+# GNOME Weather Location Manager
 ## Description
 GNOME Weather Location Manager is a small command-line utility for GNOME Weather (libgweather 4.x) that allows users to add custom locations directly to the application's settings.
 
