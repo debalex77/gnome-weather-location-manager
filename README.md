@@ -68,6 +68,11 @@ gcc -Wall -Wextra -O2 \
 gsettings get org.gnome.Weather locations 
 ```
 
+## 🗑️ Delete the location
+```
+gsettings reset org.gnome.Weather locations
+```
+
 The program creates a serialized GWeatherLocation object using the installed libgweather library and stores it in the org.gnome.Weather GSettings database.
 
 ## ⚖️ License
