@@ -21,9 +21,9 @@ Writes the location directly into the GNOME Weather GSettings database.
 Avoids manual editing of GSettings or undocumented GVariant structures.
 Lightweight, fast, and without external network dependencies.
 
-<img width="352" height="643" alt="Screenshot From 2026-07-16 06-41-14" src="https://github.com/user-attachments/assets/05749023-4532-4f64-8ec1-bf19061bafaa" />
+<img width="339" height="626" alt="1" src="https://github.com/user-attachments/assets/ec99a23a-c15e-457d-ad06-55a21be85007" />
 
-<img width="351" height="739" alt="Screenshot From 2026-07-16 06-43-14" src="https://github.com/user-attachments/assets/fe282941-5eaa-4e46-b546-518596009ab9" />
+<img width="335" height="722" alt="2" src="https://github.com/user-attachments/assets/2a3adc70-a1b8-4109-a6b0-bea2ec6fa56a" />
 
 <img width="957" height="780" alt="Screenshot From 2026-07-16 06-42-43" src="https://github.com/user-attachments/assets/4326b1f2-c4da-4d71-be07-1858eec8a36c" />
 
